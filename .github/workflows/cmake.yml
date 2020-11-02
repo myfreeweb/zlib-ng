@@ -14,14 +14,14 @@ jobs:
             cmake-args: -DWITH_SANITIZERS=ON
             codecov: ubuntu_gcc
 
-          - name: Ubuntu GCC OSB -O1 No Unaligned
+          - name: Ubuntu GCC OSB -O1 No Unaligned64
             os: ubuntu-latest
             compiler: gcc
             cmake-args: -DWITH_SANITIZERS=ON -DWITH_UNALIGNED=OFF
             build-dir: ../build
             build-src-dir: ../zlib-ng
             codecov: ubuntu_gcc_osb
-            cflags: -O1 -g3
+            cflags: -O1 -g3 -DUNALIGNED_OK
 
           - name: Ubuntu GCC -O3 No Unaligned
             os: ubuntu-latest
